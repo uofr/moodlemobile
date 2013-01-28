@@ -1,0 +1,41 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// Licensed to the Apache Software Foundation (ASF) under one</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// or more contributor license agreements.  See the NOTICE file</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// distributed with this work for additional information</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">// regarding copyright ownership.  The ASF licenses this file</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// to you under the Apache License, Version 2.0 (the</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// "License"); you may not use this file except in compliance</span><span class="WHIT">
+<span class='line'>  7</span> </span><span class="COMM">// with the License.  You may obtain a copy of the License at</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="COMM">//</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="COMM">// http://www.apache.org/licenses/LICENSE-2.0</span><span class="WHIT">
+<span class='line'> 10</span> </span><span class="COMM">//</span><span class="WHIT">
+<span class='line'> 11</span> </span><span class="COMM">// Unless required by applicable law or agreed to in writing,</span><span class="WHIT">
+<span class='line'> 12</span> </span><span class="COMM">// software distributed under the License is distributed on an</span><span class="WHIT">
+<span class='line'> 13</span> </span><span class="COMM">// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span><span class="WHIT">
+<span class='line'> 14</span> </span><span class="COMM">// KIND, either express or implied.  See the License for the</span><span class="WHIT">
+<span class='line'> 15</span> </span><span class="COMM">// specific language governing permissions and limitations</span><span class="WHIT">
+<span class='line'> 16</span> </span><span class="COMM">// under the License.</span><span class="WHIT">
+<span class='line'> 17</span> 
+<span class='line'> 18</span> </span><span class="COMM">/**
+<span class='line'> 19</span>  * @fileoverview Moodle mobile templates lib.
+<span class='line'> 20</span>  * @author &lt;a href="mailto:jleyva@cvaconsulting.com">Juan Leyva&lt;/a>
+<span class='line'> 21</span>  * @version 1.2
+<span class='line'> 22</span>  */</span><span class="WHIT">
+<span class='line'> 23</span> 
+<span class='line'> 24</span> 
+<span class='line'> 25</span> </span><span class="COMM">/**
+<span class='line'> 26</span>   * @namespace Holds all the MoodleMobile templates functionallity.
+<span class='line'> 27</span>  */</span><span class="WHIT">
+<span class='line'> 28</span> </span><span class="NAME">MM.tpl</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 29</span> </span><span class="WHIT">    </span><span class="NAME">render</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">text</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">data</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">settings</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 30</span> </span><span class="WHIT">    	</span><span class="NAME">MM.log</span><span class="PUNC">(</span><span class="STRN">'Tol: Rendering template'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 31</span> </span><span class="WHIT">        </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_.template</span><span class="PUNC">(</span><span class="NAME">text</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">data</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">settings</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 32</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 33</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 34</span> </span></pre></body></html>

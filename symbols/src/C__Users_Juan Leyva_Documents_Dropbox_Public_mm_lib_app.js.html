@@ -1,0 +1,78 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">// Licensed to the Apache Software Foundation (ASF) under one</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="COMM">// or more contributor license agreements.  See the NOTICE file</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="COMM">// distributed with this work for additional information</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="COMM">// regarding copyright ownership.  The ASF licenses this file</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">// to you under the Apache License, Version 2.0 (the</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// "License"); you may not use this file except in compliance</span><span class="WHIT">
+<span class='line'>  7</span> </span><span class="COMM">// with the License.  You may obtain a copy of the License at</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="COMM">//</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="COMM">// http://www.apache.org/licenses/LICENSE-2.0</span><span class="WHIT">
+<span class='line'> 10</span> </span><span class="COMM">//</span><span class="WHIT">
+<span class='line'> 11</span> </span><span class="COMM">// Unless required by applicable law or agreed to in writing,</span><span class="WHIT">
+<span class='line'> 12</span> </span><span class="COMM">// software distributed under the License is distributed on an</span><span class="WHIT">
+<span class='line'> 13</span> </span><span class="COMM">// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span><span class="WHIT">
+<span class='line'> 14</span> </span><span class="COMM">// KIND, either express or implied.  See the License for the</span><span class="WHIT">
+<span class='line'> 15</span> </span><span class="COMM">// specific language governing permissions and limitations</span><span class="WHIT">
+<span class='line'> 16</span> </span><span class="COMM">// under the License.</span><span class="WHIT">
+<span class='line'> 17</span> 
+<span class='line'> 18</span> 
+<span class='line'> 19</span> </span><span class="COMM">/**
+<span class='line'> 20</span>  * @fileOverview This is the js file that loads all the dependencies and init the application.
+<span class='line'> 21</span>  * @author &lt;a href="mailto:jleyva@cvaconsulting.com">Juan Leyva&lt;/a>
+<span class='line'> 22</span>  * @version 1.2
+<span class='line'> 23</span>  */</span><span class="WHIT">
+<span class='line'> 24</span> 
+<span class='line'> 25</span> </span><span class="COMM">// Base path for all the files required.</span><span class="WHIT">
+<span class='line'> 26</span> </span><span class="NAME">require.config</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 27</span> </span><span class="WHIT">    </span><span class="NAME">paths</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 28</span> </span><span class="WHIT">        </span><span class="NAME">root</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'..'</span><span class="WHIT">
+<span class='line'> 29</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 30</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 31</span> 
+<span class='line'> 32</span> </span><span class="COMM">// Requeriments for launch the app, the function is not executed until both files are fully loaded.</span><span class="WHIT">
+<span class='line'> 33</span> </span><span class="COMM">// We need at least the config.json file with all the settings and the language file.</span><span class="WHIT">
+<span class='line'> 34</span> </span><span class="NAME">require</span><span class="PUNC">(</span><span class="PUNC">[</span><span class="STRN">'root/externallib/text!root/config.json'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'root/externallib/text!root/lang/en.json'</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 35</span> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">config</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">lang</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 36</span> 
+<span class='line'> 37</span> </span><span class="WHIT">    </span><span class="NAME">config</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">JSON.parse</span><span class="PUNC">(</span><span class="NAME">config</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 38</span> </span><span class="WHIT">    </span><span class="COMM">// Init the app.</span><span class="WHIT">
+<span class='line'> 39</span> </span><span class="WHIT">    </span><span class="NAME">MM.init</span><span class="PUNC">(</span><span class="NAME">config</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 40</span> </span><span class="WHIT">    </span><span class="NAME">MM.lang.base</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">JSON.parse</span><span class="PUNC">(</span><span class="NAME">lang</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 41</span> 
+<span class='line'> 42</span> </span><span class="WHIT">    </span><span class="COMM">// Once the config and base lang are loaded, we load all the plugins defined in the config.json file.</span><span class="WHIT">
+<span class='line'> 43</span> </span><span class="WHIT">    </span><span class="NAME">require.config</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 44</span> </span><span class="WHIT">        </span><span class="NAME">baseUrl</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'plugins'</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 45</span> </span><span class="WHIT">        </span><span class="NAME">packages</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">config.plugins</span><span class="WHIT">
+<span class='line'> 46</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 47</span> 
+<span class='line'> 48</span> </span><span class="WHIT">    </span><span class="COMM">// We load extra languages if are present in the config file.</span><span class="WHIT">
+<span class='line'> 49</span> </span><span class="WHIT">    </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">extraLang</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'root/externallib/text!root/lang/'</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">config.default_lang</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">'.json'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 50</span> </span><span class="WHIT">    </span><span class="NAME">config.plugins.unshift</span><span class="PUNC">(</span><span class="NAME">extraLang</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 51</span> 
+<span class='line'> 52</span> </span><span class="WHIT">    </span><span class="NAME">require</span><span class="PUNC">(</span><span class="NAME">config.plugins</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 53</span> </span><span class="WHIT">        </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">extraLang</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 54</span> </span><span class="WHIT">            </span><span class="NAME">MM.lang.loadLang</span><span class="PUNC">(</span><span class="STRN">'core'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">config.default_lang</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">JSON.parse</span><span class="PUNC">(</span><span class="NAME">extraLang</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 55</span> </span><span class="WHIT">            </span><span class="NAME">$</span><span class="PUNC">(</span><span class="NAME">document</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">ready</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 56</span> </span><span class="WHIT">                </span><span class="COMM">// Load the base layout of the app.</span><span class="WHIT">
+<span class='line'> 57</span> </span><span class="WHIT">                </span><span class="NAME">MM.loadLayout</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 58</span> 
+<span class='line'> 59</span> </span><span class="WHIT">                </span><span class="COMM">// Register the device in the notifications server, retrieve tokens</span><span class="WHIT">
+<span class='line'> 60</span> </span><span class="WHIT">                </span><span class="NAME">MM.plugins.notifications.registerDevice</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 61</span> 
+<span class='line'> 62</span> </span><span class="WHIT">                </span><span class="COMM">// Check for notification when the app launch.</span><span class="WHIT">
+<span class='line'> 63</span> </span><span class="WHIT">                </span><span class="NAME">MM.plugins.notifications.check</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 64</span> 
+<span class='line'> 65</span> </span><span class="WHIT">                </span><span class="COMM">// Listen for push events.</span><span class="WHIT">
+<span class='line'> 66</span> </span><span class="WHIT">                </span><span class="NAME">MM.plugins.notifications.listenEvents</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 67</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 68</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 69</span> </span><span class="WHIT">    </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 70</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 71</span> </span></pre></body></html>
