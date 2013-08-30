@@ -1,0 +1,30 @@
+/* University of Regina MoodleMobile Custom CSS */
+
+/* layout.css overrides */
+
+.user-menu  .user-options {
+	background: #FA8F1C;
+	height: 40px;
+	width: 100%;
+}
+
+/* styles.css overrides */
+
+.header-main {
+  background-color: #fdc82f;
+    color: #333;
+}
+
+.panel.user-menu {
+  background-color: #fdc82f;
+  color: #333;
+}
+
+#add-site {
+  background: #fdc82f;
+}
+
+#app-dialog > div {
+    background: #fdc82f;
+}
+
